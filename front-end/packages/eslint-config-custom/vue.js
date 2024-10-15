@@ -32,5 +32,7 @@ module.exports = {
     "import/no-default-export": "off",
     "vue/multi-word-component-names": "off",
     // add specific rules configurations here
+    "no-console": 0,
+    "import/no-unresolved": "off"
   },
 };

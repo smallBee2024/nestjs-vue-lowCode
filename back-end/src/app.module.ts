@@ -1,12 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigService, ConfigModule } from '@nestjs/config';
-
 import envConfig from '../config/env';
-
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { ApplyModule } from './apply/apply.module';
+import { AuthModule } from './module/system/auth/auth.module';
+// import { UserModule } from './module/system/user/user.module';
 
 @Module({
   imports: [
@@ -30,9 +27,9 @@ import { ApplyModule } from './apply/apply.module';
         synchronize: false, //根据实体自动创建数据库表， 生产环境建议关闭
       }),
     }),
-    ApplyModule,
+    AuthModule,
+    // UserModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  providers: [],
 })
 export class AppModule {}

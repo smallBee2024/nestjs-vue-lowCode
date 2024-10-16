@@ -14,11 +14,6 @@ NProgress.configure({ showSpinner: false }) // NProgress Configuration
 router.beforeEach((to, from, next) => {
   // 如果没有token，跳转到登录页
   if (!localStorage.getItem('token')) {
-    // return whiteRouterList.includes(to.path)
-    //   ? next()
-    //   : loginType === 'yfy'
-    //   ? (window.location.href = '/loginOut')
-    //   : next('/login')
     if (WhiteRouterList.includes(to.path)) {
       next()
     } else if (to.path !== '/login') {

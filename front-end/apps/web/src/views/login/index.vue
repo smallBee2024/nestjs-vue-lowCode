@@ -58,8 +58,8 @@ const onFinish = async () => {
     name: formState.name,
     password: formState.password,
   })
-  if (res.code === 200) {
-    localStorage.setItem('token', res.token)
+  if (res.success === true) {
+    localStorage.setItem('token', res.data.token)
     router.push('/')
   } else {
     console.error(res.message);

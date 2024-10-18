@@ -4,6 +4,8 @@ import { ConfigService, ConfigModule } from '@nestjs/config';
 import envConfig from '../config/env';
 import { AuthModule } from './module/system/auth/auth.module';
 // import { UserModule } from './module/system/user/user.module';
+// 引入 apply模块
+import { ApplyModule } from './module/system/apply/apply.module';
 
 @Module({
   imports: [
@@ -29,6 +31,7 @@ import { AuthModule } from './module/system/auth/auth.module';
     }),
     AuthModule,
     // UserModule,
+    ApplyModule,
   ],
   providers: [],
 })

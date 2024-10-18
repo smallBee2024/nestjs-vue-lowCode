@@ -1,12 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css' // progress bar style
-import { constantRoutes } from './router'
+import { constantRoutes, asyncRoutes, noMatchRoute } from './router'
 import { WhiteRouterList } from './config';
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: constantRoutes,
+  routes: [
+    ...constantRoutes,
+    ...asyncRoutes,
+    noMatchRoute
+  ],
 });
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration

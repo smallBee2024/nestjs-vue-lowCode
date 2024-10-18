@@ -3,6 +3,7 @@ import { JwtService } from '@nestjs/jwt';
 import { UserService } from '../user/user.service';
 import * as bcrypt from 'bcryptjs';
 import * as moment from 'moment';
+import { ResultFactory } from '../../../utils/index';
 
 @Injectable()
 export class AuthService {
@@ -23,9 +24,15 @@ export class AuthService {
 
   async login(user: any) {
     const payload = { username: user.username, sub: user.id };
-    return {
-      access_token: this.jwtService.sign(payload),
-    };
+    return ResultFactory({
+      code: 200,
+      msg: '登录成功',
+      data: {
+        token: this.jwtService.sign(payload),
+      },
+      success: true,
+    });
+    // access_token: this.jwtService.sign(payload),
   }
 
   async register(name: string, password: string) {

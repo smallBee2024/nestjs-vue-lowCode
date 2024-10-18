@@ -23,43 +23,27 @@ export const constantRoutes: Array<RouteRecordRaw> = [
     path: '/register',
     component: () => import('@/views/register/index.vue'),
   },
-  // {
-  //   path: "/:pathMatch(.*)*",
-  //   component: () => import('@/views/error/404'),
-  //   hidden: true
-  // },
-  // {
-  //   path: '/401',
-  //   component: () => import('@/views/error/401'),
-  //   hidden: true
-  // },
-  // {
-  //   path: '',
-  //   component: Layout,
-  //   redirect: '/index',
-  //   children: [
-  //     {
-  //       path: '/index',
-  //       component: () => import('@/views/index'),
-  //       name: 'Index',
-  //       meta: { title: '首页', icon: 'dashboard', affix: true }
-  //     }
-  //   ]
-  // },
-  // {
-  //   path: '/user',
-  //   component: Layout,
-  //   hidden: true,
-  //   redirect: 'noredirect',
-  //   children: [
-  //     {
-  //       path: 'profile',
-  //       component: () => import('@/views/system/user/profile/index'),
-  //       name: 'Profile',
-  //       meta: { title: '个人中心', icon: 'user' }
-  //     }
-  //   ]
-  // }
+]
+
+// 动态路由
+export const asyncRoutes: Array<RouteRecordRaw> = [
+  {
+    path: '/',
+    name: 'app',
+    component: () => import('@/layout/Index.vue'),
+    children: [
+      {
+        path: '/',
+        name: 'indexPage',
+        component: () => import('@/views/Index/index.vue'),
+      },
+      {
+        path: '/apply',
+        name: 'Apply',
+        component: () => import('@/views/Apply/index.vue'),
+      },
+    ]
+  },
 ]
 
 // 未匹配到路由时显示的页面

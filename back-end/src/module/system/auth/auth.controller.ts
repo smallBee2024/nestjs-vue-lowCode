@@ -11,6 +11,7 @@ import {
 import { AuthService } from './auth.service';
 // import { JwtAuthGuard } from './jwt-auth.guard';
 import { AuthGuard } from '@nestjs/passport';
+import { ResultFactory } from '../../../utils/index';
 
 @Controller('auth')
 export class AuthController {
@@ -21,7 +22,12 @@ export class AuthController {
     const user = await this.authService.validateUser(req.name, req.password);
     // console.log(user);
     if (!user) {
-      return { error: 'Invalid credentials' };
+      return ResultFactory({
+        code: 401,
+        msg: '用户名或密码错误',
+        data: null,
+        success: false,
+      });
     }
     return this.authService.login(user);
   }

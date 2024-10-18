@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "vite --port 3000",
+    "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
@@ -11,12 +11,14 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "@common/types": "workspace:*",
     "ant-design-vue": "^4.2.5",
     "axios": "^1.7.7",
     "less": "^4.2.0",
     "nprogress": "^0.2.0",
+    "pinia": "^2.2.4",
     "ui": "workspace:*",
-    "@common/types": "workspace:*",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },

@@ -37,14 +37,17 @@ export class ApplyService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} apply`;
+    return this.applyRepository.findOne({
+      where: { id },
+    });
   }
 
-  update(id: number) {
-    return `This action updates a #${id} apply`;
+  // 通过id，name修改数据
+  update(id: number, appName: string) {
+    return this.applyRepository.update({ id }, { appName });
   }
 
   remove(id: number) {
-    return `This action removes a #${id} apply`;
+    return this.applyRepository.delete({ id });
   }
 }

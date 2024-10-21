@@ -1,6 +1,9 @@
 # Develop the server through nodejs
 
-下定决心，一定要掌握一门后端语言，成为一名全栈工程师。(`Make up your mind to master a back-end language and become a full-stack engineer.`)
+**项目目标`Project objective`:**
+
+- 下定决心，一定要掌握一门后端语言，成为一名全栈工程师。`Make up your mind to master a back-end language and become a full-stack engineer.`
+- 能力提升：能独立完成项目前端端开发；`improve ability`
 
 ## Server(服务端)
 

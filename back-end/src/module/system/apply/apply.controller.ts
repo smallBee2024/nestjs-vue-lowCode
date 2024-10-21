@@ -3,14 +3,17 @@ import {
   Get,
   Post,
   Body,
-  Patch,
+  // Patch,
   Param,
   Delete,
   UseGuards,
+  Put,
+  Query,
 } from '@nestjs/common';
 import { ApplyService } from './apply.service';
 import { AuthGuard } from '@nestjs/passport';
 import { ResultFactory } from '../../../utils/index';
+// import { query } from 'express';
 
 @UseGuards(AuthGuard('jwt'))
 @Controller('apply')
@@ -22,10 +25,22 @@ export class ApplyController {
     return this.applyService.create(body);
   }
 
+  @Get(':id')
+  async findOne(@Param('id') id: string) {
+    const data = await this.applyService.findOne(+id);
+    console.log('params', id, data);
+    return ResultFactory({
+      code: 200,
+      msg: 'success',
+      data,
+      success: true,
+    });
+  }
+
   @Get()
-  async findAll() {
+  async findAll(@Query() query) {
     const data = await this.applyService.findAll();
-    console.log(data);
+    console.log('query', query);
 
     return ResultFactory({
       code: 200,
@@ -35,20 +50,25 @@ export class ApplyController {
     });
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.applyService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateApplyDto: any) {
-    console.log('updateApplyDto==', updateApplyDto);
-    return {};
-    // return this.applyService.update(+id, updateApplyDto);
+  @Put(':id')
+  async update(@Param('id') id: string, @Body() body: any) {
+    await this.applyService.update(+id, body.name);
+    return ResultFactory({
+      code: 200,
+      msg: '修改成功！',
+      data: null,
+      success: true,
+    });
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.applyService.remove(+id);
+  async remove(@Param('id') id: string) {
+    await this.applyService.remove(+id);
+    return ResultFactory({
+      code: 200,
+      msg: '删除成功！',
+      data: null,
+      success: true,
+    });
   }
 }

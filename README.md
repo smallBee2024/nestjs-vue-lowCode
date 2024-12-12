@@ -3,7 +3,7 @@
 **项目目标`Project objective`:**
 
 - 下定决心，一定要掌握一门后端语言，成为一名全栈工程师。`Make up your mind to master a back-end language and become a full-stack engineer.`
-- 能力提升：能独立完成项目前端端开发；`improve ability`
+- 能力提升：能独立完成前后端开发；`improve ability`
 
 ## Server(服务端)
 
@@ -34,3 +34,17 @@
 ## Zero code application scenario 零代码应用场景
 
 通过vue实现一个零代码项目；
+
+
+
+
+
+创建一个前端项目：
+
+- 使用turbo创建一个monorepo项目
+- 使用微前端 qiankun框架
+- 项目是一个低代码项目
+  - 包含登录注册页面
+  - 应用列表，CRUD
+  - 应用内页面列表，CRUD
+  - 使用第三方 TinyEngine实现低代码

@@ -6,6 +6,8 @@ import { AuthModule } from './module/system/auth/auth.module';
 // import { UserModule } from './module/system/user/user.module';
 // 引入 apply模块
 import { ApplyModule } from './module/system/apply/apply.module';
+// 引入 pages模块
+import { PagesModule } from './module/system/pages/pages.module';
 
 @Module({
   imports: [
@@ -32,6 +34,7 @@ import { ApplyModule } from './module/system/apply/apply.module';
     AuthModule,
     // UserModule,
     ApplyModule,
+    PagesModule,
   ],
   providers: [],
 })

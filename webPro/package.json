@@ -1,0 +1,17 @@
+{
+  "name": "vue-turbo-app",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test"
+  },
+  "devDependencies": {
+    "turbo": "^1.12.4"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+} 

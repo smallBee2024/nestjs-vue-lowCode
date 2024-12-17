@@ -1,9 +1,10 @@
 {
-  "name": "with-vue-nuxt",
+  "name": "sxx-lowcode",
   "private": true,
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "dev:home": "turbo run dev --filter home",
     "dev:web": "turbo run dev --filter web",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""

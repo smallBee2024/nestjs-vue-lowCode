@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "home",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -12,11 +12,13 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "ui": "workspace:*"
+    "ui": "workspace:*",
+    "wujie-vue3": "^1.0.0"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
+    "@nuxtjs/tailwindcss": "^6.12.2",
     "eslint": "^8.57.0",
     "eslint-config-custom": "workspace:*",
     "nuxt": "^3.10.3",
